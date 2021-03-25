@@ -61,6 +61,8 @@ stages:
                     
                 - script: |
                     ping localhost -c 10
+                    ping azurevm -c 10
+                    ip addr
                     ping 192.168.56.10 -c 10
                     curl -T '$(output.directory)/$(artifact.name)' 'http://$(server.dev.user):$(server.dev.password)@$(server.dev.host)/manager/text/deploy?path=/$(artifact.azure.name)&update=true'
                   displayName: 'Deploying app'
