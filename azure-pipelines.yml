@@ -46,8 +46,12 @@ stages:
         pool:
           vmImage: 'ubuntu-latest'
           # creates an environment if it doesn't exist
-        environment: 'STAGING'
+        #environment: 'STAGING'
         #resourceType: 'staging'
+        environment:
+          name:  STAGING
+          resourceType: VirtualMachine
+          #tags: web
         strategy:
           # default deployment strategy, more coming...
           runOnce:
