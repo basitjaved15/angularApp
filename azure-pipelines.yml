@@ -47,7 +47,6 @@ stages:
           vmImage: 'ubuntu-latest'
           # creates an environment if it doesn't exist
         environment: 'STAGING'
-        resourceType: 'VirtualMachine'
         strategy:
           # default deployment strategy, more coming...
           runOnce:
