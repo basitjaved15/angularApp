@@ -60,5 +60,5 @@ stages:
                   name: 'DownloadPipelineArtifact'
                     
                 - script: |
-                    curl -T '$(output.directory)/$(artifact.name)' 'http://$(server.dev.user):$(server.dev.password)@$(server.dev.host)/manager/text/deploy?path=/$(artifact.azure.name)&update=true'
+                    curl -T '$(output.directory)/$(artifact.name)' 'http://tomcat:tomcat@192.168.56.10:8080/manager/text/deploy?path=/$(artifact.azure.name)&update=true'
                   displayName: 'Deploying app'
