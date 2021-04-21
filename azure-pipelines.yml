@@ -1,5 +1,5 @@
 trigger:
-  batch: boolean
+  #batch: boolean
   branches:
     include:
       - master
