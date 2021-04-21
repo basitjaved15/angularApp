@@ -52,6 +52,7 @@ stages:
           name:  STAGING
           resourceType: VirtualMachine
           #tags: web
+          #tags: test
         strategy:
           # default deployment strategy, more coming...
           runOnce:
