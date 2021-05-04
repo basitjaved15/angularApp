@@ -1,5 +1,6 @@
 trigger:
   #batch: boolean
+  # Testing CICD Pipeline
   branches:
     include:
       - master
