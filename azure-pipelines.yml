@@ -1,4 +1,4 @@
-# Testing CICD Pipeline for Demo Purpose
+# Testing CICD Pipeline for Testing
 trigger:
   branches:
     include:
