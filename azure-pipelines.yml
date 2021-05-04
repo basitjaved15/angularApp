@@ -1,9 +1,7 @@
+# Testing CICD Pipeline for demo
 trigger:
-  #batch: boolean
-  # Testing CICD Pipeline for demo
   branches:
     include:
-      - master
       - main
       - release/*
 
