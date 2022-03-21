@@ -24,11 +24,13 @@ stages:
               SonarCloud: 'SC'
               organization: 'test-app1'
               scannerMode: 'Other'
-          - task: NodeTool@0
+              extraProperties: |
+                sonar.projectKey=test-job-1
+                sonar.projectName=test-job-1
+          - task: NodeTool@2
             inputs:
               versionSpec: '10.x'
               sonarQubeRunAnalysis: true
-              sonarQubeGradlePluginVersion: '3.3'
             displayName: 'Install Node.js'
           - script: |
               npm install --ignore-scripts --verbose
@@ -37,7 +39,7 @@ stages:
             displayName: 'PublishPipelineArtifact'
     
           
-          - task: SonarCloudAnalyze@1
+          #- task: SonarCloudAnalyze@1
           - task: SonarCloudPublish@1
             inputs:
               pollingTimeoutSec: '300'
