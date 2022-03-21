@@ -27,6 +27,7 @@ stages:
               extraProperties: |
                 sonar.projectKey=test-job-1
                 sonar.projectName=test-job-1
+                sonar.verbose=true
           - task: NodeTool@0
             inputs:
               versionSpec: '10.x'
