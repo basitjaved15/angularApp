@@ -30,6 +30,15 @@ stages:
               npm run build:war
             displayName: 'PublishPipelineArtifact'
     
+          - task: SonarCloudPrepare@1
+            inputs:
+              SonarCloud: 'SC'
+              organization: 'test-app1'
+              scannerMode: 'Other'
+          - task: SonarCloudAnalyze@1
+          - task: SonarCloudPublish@1
+            inputs:
+              pollingTimeoutSec: '300'
           - task: PublishPipelineArtifact@1
             inputs:
               artifactsFeeds: angularApp
