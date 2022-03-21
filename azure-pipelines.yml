@@ -24,18 +24,19 @@ stages:
               versionSpec: '10.x'
             displayName: 'Install Node.js'
     
+          - task: SonarCloudPrepare@1
+            inputs:
+              SonarCloud: 'SC'
+              organization: 'test-app1'
+              scannerMode: 'Other'
           - script: |
               npm install --ignore-scripts --verbose
               npm run build
               npm run build:war
             displayName: 'PublishPipelineArtifact'
     
-          - task: SonarCloudPrepare@1
-            inputs:
-              SonarCloud: 'SC'
-              organization: 'test-app1'
-              scannerMode: 'Other'
-          - task: SonarCloudAnalyze@1
+          
+          #- task: SonarCloudAnalyze@1
           - task: SonarCloudPublish@1
             inputs:
               pollingTimeoutSec: '300'
