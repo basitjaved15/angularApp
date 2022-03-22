@@ -18,7 +18,7 @@ stages:
     jobs:
       - job: 'Build_Publish_Artifact'
         displayName: 'Build and Publish Artifact'
-        
+        steps:
           - task: SonarCloudPrepare@1
             inputs:
               SonarCloud: 'SC'
