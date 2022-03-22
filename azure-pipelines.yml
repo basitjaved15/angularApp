@@ -13,6 +13,15 @@ variables:
   - group: angular-app-vars
 
 stages:
+  - stage: 'PreDeployment'
+    displayName: 'super-linter validation'
+    jobs:
+      - job: lint_tests
+        displayName: Lint Tests
+      - script: |
+              docker pull github/super-linter:latest
+              docker run -e RUN_LOCAL=true -v $(System.DefaultWorkingDirectory):/tmp/lint github/super-linter
+              
   - stage: 'Build_Publish_Artifact'
     displayName: 'Build and Publish Artifact'
     jobs:
